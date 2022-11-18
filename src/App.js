@@ -1,29 +1,22 @@
-import "antd/dist/antd.min.css";
+import { Routes, Route } from "react-router-dom";
 import classes from "./css/styles.module.css";
+import "antd/dist/antd.min.css";
 
-import axios from "axios";
-import { useEffect, useState } from "react";
+import Home from "./pages/Home";
+import AllBooks from "./pages/AllBooks";
+import BookDetails from "./pages/BookDetails";
+import Favorites from "./pages/Favorites";
 
 function App() {
   //TODO: Teste de endpoint
 
-  const [exercises, setExercises] = useState([]);
-  useEffect(() => {
-    axios
-      .get("https://wger.de/api/v2/exercise/")
-      .then(res => {
-        setExercises(res.data.results);
-      })
-      .catch(err => console.log(err));
-  }, []);
   return (
-    <div className={classes["app"]}>
-      <ul>
-        {exercises.map(ex => {
-          return <li key={ex.id}>{ex.name}</li>;
-        })}
-      </ul>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />}></Route>
+      <Route path="/allbooks" element={<AllBooks />}></Route>
+      <Route path="/books/:id" element={<BookDetails />}></Route>
+      <Route path="/favorites" element={<Favorites />}></Route>
+    </Routes>
   );
 }
 
