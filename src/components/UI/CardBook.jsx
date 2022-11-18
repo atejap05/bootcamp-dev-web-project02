@@ -1,32 +1,33 @@
 import React from "react";
-import {
-  EditOutlined,
-  EllipsisOutlined,
-  SettingOutlined,
-} from "@ant-design/icons";
-import { Avatar, Card } from "antd";
-const { Meta } = Card;
+import { HeartFilled, HeartOutlined } from "@ant-design/icons";
+import { Card } from "antd";
+import { useNavigate } from "react-router-dom";
 
-const CardBook = ({ image, description }) => (
-  <Card
-    style={{
-      width: 300,
-      height: 700,
-      overflow: "hidden",
-      textOverflow: "ellipsis",
-    }}
-    cover={<img alt="example" src={image} />}
-    actions={[
-      <SettingOutlined key="setting" />,
-      <EditOutlined key="edit" />,
-      <EllipsisOutlined key="ellipsis" />,
-    ]}
-  >
-    <Meta
-      avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
-      title="Card title"
-      description={description}
-    />
-  </Card>
-);
+const CardBook = ({ id, title, image, description }) => {
+  const navigate = useNavigate();
+  const { Meta } = Card;
+  return (
+    <Card
+      style={{
+        width: 300,
+        height: 700,
+        overflow: "hidden",
+      }}
+      hoverable
+      cover={
+        <img
+          onClick={() => navigate(`/books/${id}`)}
+          alt="example"
+          src={image}
+        />
+      }
+    >
+      <Meta
+        avatar={<HeartOutlined />}
+        title={title}
+        description={description.slice(0, 150) + "..."}
+      />
+    </Card>
+  );
+};
 export default CardBook;

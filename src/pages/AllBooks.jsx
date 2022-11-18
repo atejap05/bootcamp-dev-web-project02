@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import classes from "../css/styles.module.css";
 import Layout from "../components/Layout/Layout";
 import CardBook from "../components/UI/CardBook";
 
@@ -21,6 +20,8 @@ const AllBooks = () => {
       {allBooks.map(book => (
         <CardBook
           key={book.id}
+          id={book.id}
+          title={book.title}
           image={book.image_url}
           description={book.description}
         />

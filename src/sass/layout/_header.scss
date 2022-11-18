@@ -1,11 +1,35 @@
 .header {
   background-color: $color-blue;
   color: $color-white;
-  font-size: $medium-fs;
-  padding: 1rem 2rem;
+  font-size: $large-fs;
+  padding: 1rem 2.6rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   flex: 0 0 10%;
+
+  &__link {
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+
+    gap: 1rem;
+
+    position: relative;
+
+    &--count {
+      position: absolute;
+      top: 22%;
+      left: 7%;
+      font-weight: 700;
+      color: $color-blue;
+      font-size: $small-fs;
+    }
+
+    &--heart {
+      color: $color-yellow;
+    }
+  }
 }

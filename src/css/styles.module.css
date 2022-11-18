@@ -17,12 +17,27 @@ body {
 .header {
   background-color: #14213d;
   color: #ffffff;
-  font-size: 1.6rem;
-  padding: 1rem 2rem;
+  font-size: 2.4rem;
+  padding: 1rem 2.6rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex: 0 0 10%; }
+  .header__link {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative; }
+    .header__link--count {
+      position: absolute;
+      top: 22%;
+      left: 7%;
+      font-weight: 700;
+      color: #14213d;
+      font-size: 1.2rem; }
+    .header__link--heart {
+      color: #fca311; }
 
 .content {
   margin-top: 2rem;
