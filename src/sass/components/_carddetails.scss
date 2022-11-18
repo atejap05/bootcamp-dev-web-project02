@@ -1,0 +1,35 @@
+.carddetails {
+  // card é renderizado no main, que é uma grid!!
+
+  padding: 0 1rem;
+  margin: 0 2rem;
+  margin-bottom: 2rem;
+
+  background-color: $color-gray;
+  border-radius: $medium-br;
+  grid-area: 1/-1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+
+  & figure {
+    font-size: $large-fs;
+    & figcaption {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1.4rem;
+    }
+  }
+
+  & ul {
+    font-size: $medium-fs;
+    list-style: none;
+    & li:not(:last-child) {
+      margin-bottom: 0.8rem;
+    }
+  }
+}
