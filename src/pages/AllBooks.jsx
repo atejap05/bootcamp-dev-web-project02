@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Layout from "../components/Layout/Layout";
 import CardBook from "../components/UI/CardBook";
+import { ALL_BOOKS_URL } from "../assets/API.js";
 
 const AllBooks = () => {
   const [allBooks, setAllBooks] = useState([]);
   useEffect(() => {
     axios
-      .get("https://example-data.draftbit.com/books?_limit=100")
+      .get(ALL_BOOKS_URL)
       .then(res => {
         console.log(res.data);
         setAllBooks(res.data);

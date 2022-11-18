@@ -1,6 +1,8 @@
 import React from "react";
 import { HeartFilled } from "@ant-design/icons";
 
+// TODO: add estilo no card details
+
 const CardDetails = ({
   title,
   authors,
@@ -14,7 +16,9 @@ const CardDetails = ({
     <section>
       <figure>
         <figcaption>
-          <i>heart icon</i>
+          <i>
+            <HeartFilled />
+          </i>
           <span>{title}</span>
         </figcaption>
         <img src={image} alt="front book image" />
