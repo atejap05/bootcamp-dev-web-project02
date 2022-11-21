@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "../css/styles.module.css";
 import AntButton from "../components/UI/AntButton";
+import Login from "../components/Login";
 
 const Home = () => {
+  const [showLoginForm, setShowLoginForm] = useState(false);
+
   return (
     <section className={classes.home}>
+      {showLoginForm && <Login />}
       <article className={classes["home__container"]}>
         <h1>Welcome to AppBook</h1>
         <p>
@@ -14,7 +18,7 @@ const Home = () => {
           recusandae quaerat ipsum? Dolor, ex.
         </p>
         <div>
-          <AntButton>Login</AntButton>
+          <AntButton onClick={() => setShowLoginForm(true)}>Login</AntButton>
           <AntButton>Sign up</AntButton>
         </div>
       </article>
