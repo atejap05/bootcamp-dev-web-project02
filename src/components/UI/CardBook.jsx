@@ -12,6 +12,7 @@ const CardBook = ({ id, title, image, description }) => {
         width: 300,
         height: 700,
         overflow: "hidden",
+        backgroundColor: "#e5e5e5",
       }}
       hoverable
       cover={
@@ -23,7 +24,7 @@ const CardBook = ({ id, title, image, description }) => {
       }
     >
       <Meta
-        avatar={<HeartOutlined />}
+        avatar={<HeartOutlined style={{ fontSize: "2rem" }} />}
         title={title}
         description={description.slice(0, 150) + "..."}
       />
