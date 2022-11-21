@@ -1,6 +1,7 @@
 import React from "react";
 import { Form, Input, Button, Checkbox } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
+import classes from "../css/styles.module.css";
 
 //TODO: fazer estilo modal Overlay !!!
 const Login = () => {
@@ -11,7 +12,7 @@ const Login = () => {
   return (
     <Form
       name="normal_login"
-      className="login-form"
+      className={classes.login}
       initialValues={{
         remember: true,
       }}

@@ -87,6 +87,9 @@ body {
     .carddetails ul li:not(:last-child) {
       margin-bottom: 0.8rem; }
 
+.login {
+  background-color: red; }
+
 .home {
   padding: 2rem;
   height: 100vh;
