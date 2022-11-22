@@ -1,11 +1,13 @@
 import React from "react";
-import { Form, Input, Button, Checkbox } from "antd";
+import { Form, Input, Button } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import classes from "../css/styles.module.css";
+import { validateHash } from "../Utils/utils.js";
 
 const Login = () => {
   const onFinish = values => {
     console.log("Received values of form: ", values);
+    validateHash(values.password).then(res => console.log(res));
   };
 
   return (
