@@ -12,13 +12,13 @@ const BookDetails = () => {
   //TODO: add tela error
   useEffect(() => {
     axios.get(`${BOOK_DETAILS_URL}/${id}`).then(res => setBook(res.data));
-  }, []);
+  }, [id]);
 
   return (
     <Layout>
       <CardDetails
         title={book.title}
-        image={book['image_url']}
+        image={book["image_url"]}
         authors={book.authors}
         genres={book.genres}
         num_pages={book.num_pages}

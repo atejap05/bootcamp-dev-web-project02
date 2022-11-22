@@ -2,7 +2,6 @@ import React from "react";
 import { HeartFilled } from "@ant-design/icons";
 import classes from "../../css/styles.module.css";
 
-
 const CardDetails = ({
   title,
   authors,
@@ -17,11 +16,15 @@ const CardDetails = ({
       <figure>
         <figcaption>
           <i>
-            <HeartFilled />
+            <HeartFilled
+              onClick={() => {
+                console.log("coracao");
+              }}
+            />
           </i>
           <span>{title}</span>
         </figcaption>
-        <img src={image} alt="front book image" />
+        <img src={image} alt="front book" />
       </figure>
       <div>
         <ul>

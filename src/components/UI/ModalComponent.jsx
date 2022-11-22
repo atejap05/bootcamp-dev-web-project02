@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { Button, Modal } from "antd";
+import React from "react";
+import { Modal } from "antd";
 
 const ModalComponent = ({ children, showModal, toggleModal }) => {
   const handleOk = () => {
     toggleModal(false);
   };
+
   const handleCancel = () => {
     toggleModal(false);
   };
