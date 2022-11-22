@@ -18,10 +18,13 @@ const Home = () => {
 
   return (
     <section className={classes.home}>
-      <ModalComponent showModal={showLoginForm}>
+      <ModalComponent toggleModal={setShowLoginForm} showModal={showLoginForm}>
         <Login />
       </ModalComponent>
-      <ModalComponent showModal={showSignUpForm}>
+      <ModalComponent
+        toggleModal={setShowSignUpForm}
+        showModal={showSignUpForm}
+      >
         <SignUp />
       </ModalComponent>
       <article className={classes["home__container"]}>

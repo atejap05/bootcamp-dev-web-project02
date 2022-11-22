@@ -1,24 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { Button, Modal } from "antd";
 
-const ModalComponent = ({ children, showModal }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  useEffect(() => {
-    setIsModalOpen(true);
-  }, [showModal]);
-
+const ModalComponent = ({ children, showModal, toggleModal }) => {
   const handleOk = () => {
-    setIsModalOpen(false);
+    toggleModal(false);
   };
   const handleCancel = () => {
-    setIsModalOpen(false);
+    toggleModal(false);
   };
+
   return (
     <>
       <Modal
         title="Type Username and Password"
-        open={isModalOpen}
+        open={showModal}
         onOk={handleOk}
         onCancel={handleCancel}
       >
