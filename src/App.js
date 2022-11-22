@@ -8,8 +8,6 @@ import BookDetails from "./pages/BookDetails";
 import Favorites from "./pages/Favorites";
 
 function App() {
-  //TODO: Teste de endpoint
-
   return (
     <Routes>
       <Route path="/" element={<Home />}></Route>

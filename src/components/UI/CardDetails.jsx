@@ -1,7 +1,7 @@
 import React from "react";
 import { HeartFilled } from "@ant-design/icons";
 import classes from "../../css/styles.module.css";
-// TODO: add estilo no card details
+
 
 const CardDetails = ({
   title,
