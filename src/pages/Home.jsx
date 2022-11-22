@@ -2,13 +2,28 @@ import React, { useState } from "react";
 import classes from "../css/styles.module.css";
 import AntButton from "../components/UI/AntButton";
 import Login from "../components/Login";
+import ModalComponent from "../components/UI/ModalComponent";
+import SignUp from "../components/SingUp";
 
 const Home = () => {
   const [showLoginForm, setShowLoginForm] = useState(false);
+  const [showSignUpForm, setShowSignUpForm] = useState(false);
+
+  const onClickLoginHandler = () => {
+    setShowLoginForm(true);
+  };
+  const onClickSignUpHandler = () => {
+    setShowSignUpForm(true);
+  };
 
   return (
     <section className={classes.home}>
-      {showLoginForm && <Login />}
+      <ModalComponent showModal={showLoginForm}>
+        <Login />
+      </ModalComponent>
+      <ModalComponent showModal={showSignUpForm}>
+        <SignUp />
+      </ModalComponent>
       <article className={classes["home__container"]}>
         <h1>Welcome to AppBook</h1>
         <p>
@@ -18,8 +33,8 @@ const Home = () => {
           recusandae quaerat ipsum? Dolor, ex.
         </p>
         <div>
-          <AntButton onClick={() => setShowLoginForm(true)}>Login</AntButton>
-          <AntButton>Sign up</AntButton>
+          <AntButton onClick={onClickLoginHandler}>Login</AntButton>
+          <AntButton onClick={onClickSignUpHandler}>Sign up</AntButton>
         </div>
       </article>
     </section>
