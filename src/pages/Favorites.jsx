@@ -11,16 +11,18 @@ const Favorites = () => {
   return (
     <Layout>
       {favorites.map(book => (
-        <CardDetails
-          key={book.id}
-          title={book.title}
-          image={book["image_url"]}
-          authors={book.authors}
-          genres={book.genres}
-          num_pages={book.num_pages}
-          rating={book.rating}
-          description={book.description}
-        />
+        <div>
+          <CardDetails
+            key={book.id}
+            title={book.title}
+            image={book["image_url"]}
+            authors={book.authors}
+            genres={book.genres}
+            num_pages={book.num_pages}
+            rating={book.rating}
+            description={book.description}
+          />
+        </div>
       ))}
     </Layout>
   );
