@@ -18,7 +18,7 @@ const BookDetails = () => {
     <Layout>
       <CardDetails
         title={book.title}
-        image={book.image_url}
+        image={book['image_url']}
         authors={book.authors}
         genres={book.genres}
         num_pages={book.num_pages}

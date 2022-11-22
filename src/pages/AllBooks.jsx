@@ -23,7 +23,7 @@ const AllBooks = () => {
           key={book.id}
           id={book.id}
           title={book.title}
-          image={book.image_url}
+          image={book['image_url']}
           description={book.description}
         />
       ))}

@@ -10,10 +10,10 @@ import Favorites from "./pages/Favorites";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home />}></Route>
-      <Route path="/allbooks" element={<AllBooks />}></Route>
-      <Route path="/books/:id" element={<BookDetails />}></Route>
-      <Route path="/favorites" element={<Favorites />}></Route>
+      <Route path="/" element={<Home/>}/>
+      <Route path="/allbooks" element={<AllBooks/>}/>
+      <Route path="/books/:id" element={<BookDetails/>}/>
+      <Route path="/favorites" element={<Favorites/>}/>
     </Routes>
   );
 }
