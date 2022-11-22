@@ -9,7 +9,7 @@ const Header = () => {
 
   return (
     <header className={classes.header}>
-      <div>My AppBooks</div>
+      <Link to="/allbooks">My AppBooks</Link>
       <div className={classes["header__link"]}>
         <span className={classes["header__link--count"]}>
           {favorites.length}
