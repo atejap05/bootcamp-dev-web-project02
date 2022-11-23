@@ -49,6 +49,7 @@ export const registerNewUser = (data) => {
                     "senha": hash,
                     "favorito": null
                 }).then(res => {
+                    console.log(res)
                     resolve(true)
                 })
             })

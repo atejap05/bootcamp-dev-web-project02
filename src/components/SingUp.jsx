@@ -2,10 +2,19 @@ import React from "react";
 import { Form, Input, Button } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import classes from "../css/styles.module.css";
+import { registerNewUser } from "../Utils/utils.js";
 
-const SignUp = () => {
+const SignUp = ({toggleModal}) => {
+
   const onFinish = values => {
-    console.log("Received values of form: ", values);
+    console.log(values)
+
+    registerNewUser(values).then( _ => {
+
+      console.log('aqui dentro')
+
+      toggleModal(false)
+    })
   };
 
   return (

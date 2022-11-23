@@ -25,7 +25,7 @@ const Home = () => {
         toggleModal={setShowSignUpForm}
         showModal={showSignUpForm}
       >
-        <SignUp />
+        <SignUp toggleModal={setShowSignUpForm} />
       </ModalComponent>
       <article className={classes["home__container"]}>
         <h1>Welcome to AppBook</h1>
