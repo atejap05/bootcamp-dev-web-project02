@@ -1,0 +1,38 @@
+.favorites {
+  & .carddetails {
+    margin-top: 2rem;
+    box-shadow: 0 0 4rem rgba($color-gray, 0.6);
+    transition: all 0.2s;
+
+    &:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 6rem rgba($color-gray, 0.6);
+    }
+
+    & figure {
+      flex: 0 0 25%;
+
+      & figcaption {
+        & span {
+          display: none;
+        }
+      }
+
+      & img {
+        width: 60%;
+      }
+    }
+
+    & div {
+      flex: 0 0 75%;
+
+      & .carddetails__icons {
+        text-align: end;
+        margin-right: 2rem;
+        & span:not(:last-child) {
+          margin-right: 1.6rem;
+        }
+      }
+    }
+  }
+}

@@ -87,6 +87,27 @@ body {
     .carddetails ul li:not(:last-child) {
       margin-bottom: 0.8rem; }
 
+.favorites .carddetails {
+  margin-top: 2rem;
+  box-shadow: 0 0 4rem rgba(229, 229, 229, 0.6);
+  transition: all 0.2s; }
+  .favorites .carddetails:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 6rem rgba(229, 229, 229, 0.6); }
+  .favorites .carddetails figure {
+    flex: 0 0 25%; }
+    .favorites .carddetails figure figcaption span {
+      display: none; }
+    .favorites .carddetails figure img {
+      width: 60%; }
+  .favorites .carddetails div {
+    flex: 0 0 75%; }
+    .favorites .carddetails div .carddetails__icons {
+      text-align: end;
+      margin-right: 2rem; }
+      .favorites .carddetails div .carddetails__icons span:not(:last-child) {
+        margin-right: 1.6rem; }
+
 .login {
   background-color: #ffffff; }
 

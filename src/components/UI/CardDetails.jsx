@@ -1,5 +1,5 @@
 import React from "react";
-import { HeartFilled } from "@ant-design/icons";
+import { HeartFilled, CommentOutlined } from "@ant-design/icons";
 import classes from "../../css/styles.module.css";
 
 const CardDetails = ({
@@ -34,6 +34,19 @@ const CardDetails = ({
           <li>{rating}</li>
           <li>{description}</li>
         </ul>
+        <div className={classes["carddetails__icons"]}>
+          <span>
+            {" "}
+            <HeartFilled
+              onClick={() => {
+                console.log("coracao");
+              }}
+            />
+          </span>
+          <span>
+            <CommentOutlined />
+          </span>
+        </div>
       </div>
     </section>
   );

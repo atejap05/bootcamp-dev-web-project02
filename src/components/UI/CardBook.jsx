@@ -4,21 +4,20 @@ import { Card } from "antd";
 import { useNavigate } from "react-router-dom";
 import { useFavoritesContext } from "../../context/favoritesContext";
 
-const HAERTSTYLE = { fontSize: "2rem", color: "#fca311" };
+const HEARTSTYLE = { fontSize: "2rem", color: "#fca311" };
 
 const CardBook = ({ book, title, image, description }) => {
   const [isClicked, setIsClicked] = useState(false);
-  const { addToFavorites, removeFromFavorites, favorites } =
-    useFavoritesContext();
+  const { addToFavorites, removeFromFavorites, _ } = useFavoritesContext();
 
   const heartIcon = isClicked ? (
-    <HeartFilled style={HAERTSTYLE} />
+    <HeartFilled style={HEARTSTYLE} />
   ) : (
-    <HeartOutlined style={HAERTSTYLE} />
+    <HeartOutlined style={HEARTSTYLE} />
   );
 
   const onClickFavoriteHandle = () => {
-    setIsClicked(!isClicked);
+    setIsClicked(prev => !prev);
   };
   useEffect(() => {
     isClicked ? addToFavorites(book) : removeFromFavorites(book.id);
