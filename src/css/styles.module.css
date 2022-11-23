@@ -92,7 +92,7 @@ body {
   box-shadow: 0 0 4rem rgba(229, 229, 229, 0.6);
   transition: all 0.2s; }
   .favorites .carddetails:hover {
-    transform: scale(1.03);
+    transform: scale(1.01);
     box-shadow: 0 0 6rem rgba(229, 229, 229, 0.6); }
   .favorites .carddetails figure {
     flex: 0 0 25%; }
@@ -105,6 +105,9 @@ body {
     .favorites .carddetails div .carddetails__icons {
       text-align: end;
       margin-right: 2rem; }
+      .favorites .carddetails div .carddetails__icons > span {
+        cursor: pointer;
+        font-size: 1.8rem; }
       .favorites .carddetails div .carddetails__icons span:not(:last-child) {
         margin-right: 1.6rem; }
 
