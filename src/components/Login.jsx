@@ -1,13 +1,20 @@
-import React from "react";
 import { Form, Input, Button } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import classes from "../css/styles.module.css";
 import { validateHash } from "../Utils/utils.js";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+
+  const navigate = useNavigate();
+
   const onFinish = values => {
     console.log("Received values of form: ", values);
-    validateHash(values.password).then(res => console.log(res));
+    validateHash(values).then(res => {
+      if (res){
+        navigate('/allbooks')
+      }
+    });
   };
 
   return (

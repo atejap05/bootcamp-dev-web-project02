@@ -3,7 +3,6 @@ import axios from "axios";
 import Layout from "../components/Layout/Layout";
 import CardBook from "../components/UI/CardBook";
 import { ALL_BOOKS_URL } from "../assets/API.js";
-import { useFavoritesContext } from "../context/favoritesContext";
 
 const AllBooks = () => {
   const [allBooks, setAllBooks] = useState([]);
