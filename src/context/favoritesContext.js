@@ -29,8 +29,6 @@ const FavoritesContextProvider = ({children}) => {
 
             user.favorito.push(book)
 
-            console.log("requisição vem daqui => addToFavorites")
-
             axios.put(`https://ironrest.cyclic.app/appbooks/${user._id}`, {
                 usuario: user.usuario,
                 senha: user.senha,
@@ -47,12 +45,12 @@ const FavoritesContextProvider = ({children}) => {
     const removeFromFavorites = id => {
         setFavorites(prev => {
 
-            const newFavorites = prev.filter(book => book.id !== id)
-            console.log("requisição vem daqui => removeFromFavorites")
+            user.favorito = user.favorito.filter(book => book.id !== id)
+
             axios.put(`https://ironrest.cyclic.app/appbooks/${user._id}`, {
                 usuario: user.usuario,
                 senha: user.senha,
-                favorito: newFavorites
+                favorito: user.favorito
             })
                 .then(res => {
 
