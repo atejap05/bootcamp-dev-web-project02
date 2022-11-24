@@ -3,14 +3,14 @@ import Layout from "../components/Layout/Layout";
 import { useFavoritesContext } from "../context/favoritesContext";
 import CardDetails from "../components/UI/CardDetails";
 import classes from "../css/styles.module.css";
+import {useAuthContext} from "../context/authContext";
 
 const Favorites = () => {
-  const {  favorites } =
-    useFavoritesContext();
+  const {user} = useAuthContext();
 
   return (
     <Layout contentStyle={classes.favorites}>
-      {favorites.map(book => (
+      {user.favorito.map(book => (
         <CardDetails
           key={book.id}
           title={book.title}
