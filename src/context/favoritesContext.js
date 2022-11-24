@@ -1,39 +1,75 @@
-import { createContext, useContext } from "react";
-import { useState } from "react";
+import {createContext, useContext, useState} from "react";
+import axios from "axios";
+import {useAuthContext} from "./authContext";
 
 const FavoritesContext = createContext(null);
 
 // Custom hook
 export const useFavoritesContext = () => {
-  const context = useContext(FavoritesContext);
+    const context = useContext(FavoritesContext);
 
-  if (context === "undefined") {
-    throw new Error(
-      "FavoritesContext must be within FavoritesContextProvider!"
-    );
-  }
+    if (context === undefined) {
+        throw new Error("FavoritesContext must be within FavoritesContextProvider!"
+        );
+    }
 
-  return context;
+    return context;
 };
 
-const FavoritesContextProvider = ({ children }) => {
-  const [favorites, setFavorites] = useState([]);
+const FavoritesContextProvider = ({children}) => {
 
-  const addToFavorites = book => {
-    setFavorites(prev => [...prev, book]);
-  };
+    const {user} = useAuthContext();
 
-  const removeFromFavorites = id => {
-    setFavorites(prev => prev.filter(book => book.id !== id));
-  };
+    const [favorites, setFavorites] = useState([]);
+    const [favoriteTotal, setFavoriteTotal] = useState( 0)
 
-  return (
-    <FavoritesContext.Provider
-      value={{ addToFavorites, removeFromFavorites, favorites }}
-    >
-      {children}
-    </FavoritesContext.Provider>
-  );
+    const addToFavorites = book => {
+        setFavorites(prev => {
+            const newFavorites = [...prev, book]
+
+            user.favorito.push(book)
+            axios.put(`https://ironrest.cyclic.app/appbooks/${user._id}`, {
+                usuario: user.usuario,
+                senha: user.senha,
+                favorito: user.favorito
+            })
+                .then(res => {
+
+                })
+
+            return newFavorites
+        });
+    };
+
+    const removeFromFavorites = id => {
+        setFavorites(prev => {
+
+            const newFavorites = prev.filter(book => book.id !== id)
+
+            // axios.put(`https://ironrest.cyclic.app/appbooks/${user._id}`, {
+            //     usuario: user.usuario,
+            //     senha: user.senha,
+            //     favorito: newFavorites
+            // })
+            //     .then(res => {
+            //
+            //     })
+
+            return newFavorites
+        });
+    };
+
+    const updateTotal = (n) => {
+        setFavoriteTotal(prev => prev + n)
+    }
+
+    return (
+        <FavoritesContext.Provider
+            value={{addToFavorites, removeFromFavorites, favorites, favoriteTotal, updateTotal}}
+        >
+            {children}
+        </FavoritesContext.Provider>
+    );
 };
 
 export default FavoritesContextProvider;

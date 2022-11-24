@@ -24,9 +24,6 @@ export const validateHash = user => {
         }
 
         const usuario = response.data;
-
-        console.log(usuario);
-
         sha256(user.password).then(hash => {
           if (hash === usuario["senha"]) {
             resolve({ success: true, data: usuario });

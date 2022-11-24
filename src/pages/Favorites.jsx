@@ -5,10 +5,9 @@ import CardDetails from "../components/UI/CardDetails";
 import classes from "../css/styles.module.css";
 
 const Favorites = () => {
-  const { faddToFavorites, removeFromFavorites, favorites } =
+  const {  favorites } =
     useFavoritesContext();
 
-  console.log(favorites);
   return (
     <Layout contentStyle={classes.favorites}>
       {favorites.map(book => (

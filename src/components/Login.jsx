@@ -15,9 +15,8 @@ const Login = () => {
     console.log("Received values of form: ", values);
     validateHash(values)
       .then(res => {
-        if (res.success) {
-          login(res.data.usuario);
-          //   console.log(res.data.usuario);
+        if (res['success']) {
+          login(res['data']);
           navigate("/allbooks");
         }
       })
