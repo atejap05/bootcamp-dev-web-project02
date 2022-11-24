@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import {useState} from "react";
 import {HeartFilled, HeartOutlined} from "@ant-design/icons";
 import {Card} from "antd";
 import {useNavigate} from "react-router-dom";
@@ -13,17 +13,16 @@ const CardBook = ({book, title, image, description, isFavorite}) => {
     const heartIcon = isClicked || isFavorite? (<HeartFilled style={HEARTSTYLE}/>) : (<HeartOutlined style={HEARTSTYLE}/>);
 
     const onClickFavoriteHandle = () => {
+
+        isClicked ? removeFromFavorites(book.id) : addToFavorites(book);
+
         setIsClicked(prev => {
             const newState = !prev
-
             updateTotal( newState ? 1 : -1 )
 
             return newState
         });
     };
-    useEffect(() => {
-        isClicked ? addToFavorites(book) : removeFromFavorites(book.id);
-    }, [isClicked]);
 
     const navigate = useNavigate();
     const {Meta} = Card;
