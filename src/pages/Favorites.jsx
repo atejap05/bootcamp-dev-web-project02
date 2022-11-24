@@ -1,6 +1,5 @@
 import React from "react";
 import Layout from "../components/Layout/Layout";
-import { useFavoritesContext } from "../context/favoritesContext";
 import CardDetails from "../components/UI/CardDetails";
 import classes from "../css/styles.module.css";
 import {useAuthContext} from "../context/authContext";
@@ -13,6 +12,7 @@ const Favorites = () => {
       {user.favorito.map(book => (
         <CardDetails
           key={book.id}
+          id={book.id}
           title={book.title}
           image={book["image_url"]}
           authors={book.authors}
