@@ -46,14 +46,14 @@ const FavoritesContextProvider = ({children}) => {
 
             const newFavorites = prev.filter(book => book.id !== id)
 
-            // axios.put(`https://ironrest.cyclic.app/appbooks/${user._id}`, {
-            //     usuario: user.usuario,
-            //     senha: user.senha,
-            //     favorito: newFavorites
-            // })
-            //     .then(res => {
-            //
-            //     })
+            axios.put(`https://ironrest.cyclic.app/appbooks/${user._id}`, {
+                usuario: user.usuario,
+                senha: user.senha,
+                favorito: newFavorites
+            })
+                .then(res => {
+
+                })
 
             return newFavorites
         });
