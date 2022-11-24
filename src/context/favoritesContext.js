@@ -21,7 +21,7 @@ const FavoritesContextProvider = ({children}) => {
     const {user} = useAuthContext();
 
     const [favorites, setFavorites] = useState([]);
-    const [favoriteTotal, setFavoriteTotal] = useState( 0)
+    const [favoriteTotal, setFavoriteTotal] = useState(0)
 
     const addToFavorites = book => {
         setFavorites(prev => {
@@ -63,14 +63,14 @@ const FavoritesContextProvider = ({children}) => {
     };
 
     const updateTotal = (i) => {
-        setFavoriteTotal(prev => {
+        if (i > 1) {
+            setFavoriteTotal(i)
+        } else {
+            setFavoriteTotal(prev => {
+                return prev + i
+            })
+        }
 
-            console.log(` prev ${prev}`)
-            console.log(`i ${i}`)
-            console.log(`prev + i ${prev + i}`)
-
-            return prev + i
-        })
     }
 
     return (
