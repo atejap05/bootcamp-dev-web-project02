@@ -5,7 +5,9 @@ import AntButton from "./AntButton";
 const Comments = () => {
   return (
     <section className={classes.comments}>
-      <textarea name="comment"></textarea>
+      <textarea name="comment" placeholder="What is your view?">
+        {" "}
+      </textarea>
       <AntButton>Send &rarr;</AntButton>
     </section>
   );
