@@ -1,7 +1,7 @@
 import React from "react";
 import { Modal } from "antd";
 
-const ModalComponent = ({ children, showModal, toggleModal }) => {
+const ModalComponent = ({ children, showModal, toggleModal, title }) => {
   const handleOk = () => {
     toggleModal(false);
   };
@@ -13,7 +13,7 @@ const ModalComponent = ({ children, showModal, toggleModal }) => {
   return (
     <>
       <Modal
-        title="Type Username and Password"
+        title={title}
         open={showModal}
         onOk={handleOk}
         onCancel={handleCancel}

@@ -117,6 +117,22 @@ body {
 .login {
   background-color: #ffffff; }
 
+.comments {
+  display: flex;
+  flex-direction: column;
+  height: 25rem; }
+  .comments > textarea {
+    padding: 1rem;
+    font-size: 1.8rem;
+    letter-spacing: 0.1rem;
+    flex: 0 0 80%; }
+  .comments > button {
+    color: #e5e5e5;
+    font-size: 1.8rem;
+    flex: 0 0 20%;
+    background-color: #213663;
+    border: 1px solid currentColor; }
+
 .home {
   padding: 2rem;
   height: 100vh;

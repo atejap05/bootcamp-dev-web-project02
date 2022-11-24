@@ -1,0 +1,20 @@
+.comments {
+  display: flex;
+  flex-direction: column;
+  height: 25rem;
+
+  & > textarea {
+    padding: 1rem;
+    font-size: $medium-fs;
+    letter-spacing: 0.1rem;
+    flex: 0 0 80%;
+  }
+
+  & > button {
+    color: $color-gray;
+    font-size: $medium-fs;
+    flex: 0 0 20%;
+    background-color: lighten($color-blue, 10%);
+    border: 1px solid currentColor;
+  }
+}

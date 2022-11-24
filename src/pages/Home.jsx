@@ -18,7 +18,11 @@ const Home = () => {
 
   return (
     <section className={classes.home}>
-      <ModalComponent toggleModal={setShowLoginForm} showModal={showLoginForm}>
+      <ModalComponent
+        title={"Type username and password"}
+        toggleModal={setShowLoginForm}
+        showModal={showLoginForm}
+      >
         <Login />
       </ModalComponent>
       <ModalComponent

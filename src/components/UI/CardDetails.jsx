@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { HeartFilled, CommentOutlined } from "@ant-design/icons";
 import classes from "../../css/styles.module.css";
+import ModalComponent from "./ModalComponent";
+import Comments from "./Comments";
+import AntButton from "./AntButton";
 
 const CardDetails = ({
   title,
@@ -11,8 +14,23 @@ const CardDetails = ({
   description,
   image,
 }) => {
+  const [showCommentsForm, setShowCommentsForm] = useState(false);
+
+  const onClickCommentHandler = () => {
+    setShowCommentsForm(true);
+
+    console.log("cliquei");
+  };
+
   return (
     <section className={classes["carddetails"]}>
+      <ModalComponent
+        title={"Add a comment"}
+        toggleModal={setShowCommentsForm}
+        showModal={showCommentsForm}
+      >
+        <Comments />
+      </ModalComponent>
       <figure>
         <figcaption>
           <i>
@@ -44,7 +62,7 @@ const CardDetails = ({
             />
           </span>
           <span>
-            <CommentOutlined />
+            <CommentOutlined onClick={onClickCommentHandler} />
           </span>
         </div>
       </div>
