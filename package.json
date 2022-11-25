@@ -18,7 +18,7 @@
   "scripts": {
     "start": "react-scripts start",
     "watch:sass": "node-sass src/sass/main.scss src/css/styles.module.css -w",
-    "build": "react-scripts build"
+    "build": "react-scripts build && echo '/* /index.html 200' | cat >build/_redirects"
   },
   "eslintConfig": {
     "extends": [
