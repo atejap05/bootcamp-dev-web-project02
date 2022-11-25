@@ -17,7 +17,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "watch:sass": "node-sass src/sass/main.scss src/css/styles.module.css -w"
+    "watch:sass": "node-sass src/sass/main.scss src/css/styles.module.css -w",
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [
